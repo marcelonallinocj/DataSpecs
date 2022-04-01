@@ -1,0 +1,222 @@
+{
+  "internalVersion": "Q1-2022(Mar 11th Rel)",
+  "npi": "<string> NOT NULL",
+  "year": "<integer> NOT NULL",
+  "regions": "<string []> NOT NULL",
+  "createdTs": "<string> NOT NULL",
+  "feeForService": {
+    "members": "// ETL provides members list - We use an object instead of a list of strings to keep it extensible",
+    "members": [
+      {
+        "memberID": "<string>"
+      }
+    ],
+    "inNetwork": "<bool> NOT NULL // BE calculates this given `members` and deletes the member key for the consumers",
+    "profile": {
+      "displayName": "<string>",
+      "practiceGroups": "<string []>",
+      "specialty": "<string>",
+      "subspecialty": "<string>",
+      "addresses": [
+        {
+          "address": "<string>",
+          "cbsa": "<string>"
+        }
+      ],
+      "panelSize": "<integer>"
+    },
+    "about": {
+      "education": {
+        "medicalSchool": "<string []>",
+        "boardCertifications": "<string []>"
+      },
+      "yearsOfExperience": "<integer>"
+    },
+    "procedures": {
+      "allowedAmount": "<integer>",
+      "averageAllowedAmountPerClaim": "<integer>",
+      "code": "<string>",
+      "count": "<integer>",
+      "description": "<string>",
+      "procedureGroup": "<string>"
+    },
+    "costAnalytics": {
+      "costScore": "<integer>",
+      "ppiVersion": "<string> // 1.0 or 2.0",
+      "conditionsCostScore": "<integer> // null if ppiVersion != 2.0",
+      "treatmentsCostScore": "<integer> // null if ppiVersion != 2.0",
+      "episodes": "// should be top 10 of each type of Episode (Condition/Treatment)",
+      "episodes": [
+        {
+          "numEpisodes": "<integer>",
+          "peerCost": "<integer> // benchmark for EXP",
+          "benchmarkDiff": "<integer>",
+          "benchmarkDiffPercent": "<integer>",
+          "physicianCost": "<integer>",
+          "regionalEpisode": "<integer>",
+          "episdoeCostScore": "<integer> // null if ppiVersion != 2.0",
+          "type": "<string>",
+          "hccScore": "<decimal p2>",
+          "episodeType": "<string> // Condition or Treatment",
+          "partBCost": "<integer>",
+          "inpatientCost": "<integer>",
+          "outpatientCost": "<integer>",
+          "snfCost": "<integer>",
+          "hhaCost": "<integer>",
+          "hospiceCost": "<integer>",
+          "partBBenchmark": "<integer>",
+          "inpatientBenchmark": "<integer>",
+          "outpatientBenchmark": "<integer>",
+          "snfBenchmark": "<integer>",
+          "hhaBenchmark": "<integer>",
+          "hospiceBenchmark": "<integer>"
+        }
+      ]
+    },
+    "qualityAnalytics": {
+      "outcomesScore": "<integer>",
+      "measures": "// We store top 10",
+      "measures": [
+        {
+          "denominator": "<integer>",
+          "description": "<string>",
+          "peerComparison": "<decimal 6p2>",
+          "performance": "<decimal p4>",
+          "numerator": "<string> || <integer>",
+          "type": "<string>, // is a GAM measure if type == 'Appropriateness'"
+        }
+      ]
+    },
+    "attribution": {
+      "commercialLives": "<integer>",
+      "medicareBreakdown": {
+        "directContracting": "<integer>",
+        "shared": "<integer>",
+        "mssp": "<integer>"
+      },
+      "commercial": {
+        "pmpy": "<integer>"
+      },
+      "directContracting": {
+        "pmpy": "<integer>",
+        "pctStronglyAligned": "<integer>",
+        "hccRiskScore": "<decimal p2>"
+      },
+      "mssp": {
+        "pmpy": "<integer>",
+        "pctStronglyAligned": "<integer>",
+        "hccRiskScore": "<decimal p2>"
+      }
+    },
+    "incomingReferrals": [
+      {
+        "costScore": "<integer>",
+        "outcomeScore": "<integer>",
+        "practice": "<string>",
+        "providerName": "<string>",
+        "referralPercentage": "<decimal p4>",
+        "specialty": "<string>",
+        "totalAllowed": "<decimal p2>",
+        "totalPatients": "<integer>",
+        "type": "<string>"
+      }
+    ],
+    "affiliationMetrics": {
+      "apm": "<string []>",
+      "hospital": {
+        "[id <number>]": "[name <string>]  // {1234: 'value'}"
+      },
+      "healthSystem": "// follows hospital structure",
+      "healthSystem": {
+        "[id <number>]": "[name <string>]  // {1234: 'value'}"
+      }
+    },
+    "sharedPatientsReferrals": "// ORD BY DESC totalAllowed",
+    "sharedPatientsReferrals": [
+      {
+        "npi": "<string>",
+        "providerName": "<string>",
+        "specialtyLinkage": "<string>",
+        "costScore": "<integer>",
+        "outcomeScore": "<integer>",
+        "totalAllowed": "<integer>",
+        "sharedPercentage": "<decimal p2>",
+        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes"
+      }
+    ],
+    "imagingAndTestReferrals": "// ORD BY DESC totalAllowed",
+    "imagingAndTestReferrals": [
+      {
+        "npi": "<string>",
+        "providerName": "<string>",
+        "specialtyLinkage": "<string>",
+        "costScore": "<integer>",
+        "outcomeScore": "<integer>",
+        "totalAllowed": "<integer>",
+        "referralPercentage": "<decimal p4>",
+        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes",
+        "type": "<string> // 'imaging' or 'test'"
+      }
+    ]
+  },
+  "commercial": {
+    "members": "// ETL provides members list - We use an object instead of a list of strings to keep it extensible",
+    "members": [
+      {
+        "memberID": "<string>"
+      }
+    ],
+    "inNetwork": "<bool> NOT NULL // BE calculates this given `members` and deletes the member key for the consumers",
+    "profile": {
+      "displayName": "<string>",
+      "practiceGroups": "<string []>",
+      "specialty": "<string>",
+      "subspecialty": "<string>",
+      "addresses": [
+        {
+          "address": "<string>",
+          "cbsa": "<string>"
+        }
+      ],
+      "panelSize": "<integer>"
+    },
+    "about": {
+      "education": {
+        "medicalSchool": "<string []>",
+        "boardCertifications": "<string []>"
+      },
+      "yearsOfExperience": "<integer>"
+    },
+
+    "attribution": {
+      "commercialLives": "<integer>",
+      "medicareBreakdown": {
+        "mssp": "<integer>"
+      },
+      "commercial": {
+        "pmpy": "<integer>"
+      }
+    },
+    "sharedPatientsReferrals": "// ORD BY DESC totalAllowed",
+    "sharedPatientsReferrals": [
+      {
+        "npi": "<string>",
+        "providerName": "<string>",
+        "specialtyLinkage": "<string>",
+        "totalAllowed": "<integer>",
+        "sharedPercentage": "<decimal p2>",
+        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes"
+      }
+    ],
+
+    "affiliationMetrics": {
+      "hospital": {
+        "[id <number>]": "[name <string>]  // {1234: 'value'}"
+      },
+      "healthSystem": "// follows hospital structure",
+      "healthSystem": {
+        "[id <number>]": "[name <string>]  // {1234: 'value'}"
+      }
+    }
+  }
+}
