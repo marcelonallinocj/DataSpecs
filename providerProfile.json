@@ -1,5 +1,5 @@
 {
-  "internalVersion": "Q1-2022(Mar 11th Rel)",
+  "internalVersion": "Q2-2022(Apr 21st Rel)",
   "npi": "<string> NOT NULL",
   "year": "<integer> NOT NULL",
   "regions": "<string []> NOT NULL",
@@ -23,7 +23,8 @@
           "cbsa": "<string>"
         }
       ],
-      "panelSize": "<integer>"
+      "panelSize": "<integer>",
+      "averageHCCScore": "<decimal p2>"
     },
     "about": {
       "education": {
@@ -178,7 +179,8 @@
           "cbsa": "<string>"
         }
       ],
-      "panelSize": "<integer>"
+      "panelSize": "<integer>",
+      "averageHCCScore": "<decimal p2>"
     },
     "about": {
       "education": {
