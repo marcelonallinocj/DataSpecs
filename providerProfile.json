@@ -204,10 +204,14 @@
     "attribution": {
       "commercialLives": "<integer>",
       "medicareBreakdown": {
+        "directContracting": "<integer>",
+        "shared": "<integer>",
         "mssp": "<integer>"
       },
       "commercial": {
-        "pmpy": "<integer>"
+        "pmpy": "<integer>",
+        "stronglyAligned": "<decimal p2>",
+        "hccRiskScore": "<decimal p2>"
       }
     },
     "affiliationMetrics": {
