@@ -145,6 +145,7 @@
         "costScore": "<integer>",
         "outcomeScore": "<integer>",
         "totalAllowed": "<integer>",
+        "totalPatients": "<integer>",
         "sharedPercentage": "<decimal p2>",
         "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes"
       }
@@ -158,6 +159,7 @@
         "costScore": "<integer>",
         "outcomeScore": "<integer>",
         "totalAllowed": "<integer>",
+        "totalPatients": "<integer>",
         "referralPercentage": "<decimal p4>",
         "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes",
         "type": "<string> // 'imaging' or 'test'"
@@ -208,18 +210,6 @@
         "pmpy": "<integer>"
       }
     },
-    "sharedPatientsReferrals": "// ORD BY DESC totalAllowed",
-    "sharedPatientsReferrals": [
-      {
-        "npi": "<string>",
-        "providerName": "<string>",
-        "specialtyLinkage": "<string>",
-        "totalAllowed": "<integer>",
-        "sharedPercentage": "<decimal p2>",
-        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes"
-      }
-    ],
-
     "affiliationMetrics": {
       "hospital": {
         "[id <number>]": "[name <string>]  // {1234: 'value'}"
@@ -228,6 +218,31 @@
       "healthSystem": {
         "[id <number>]": "[name <string>]  // {1234: 'value'}"
       }
-    }
+    },
+    "sharedPatientsReferrals": "// ORD BY DESC totalAllowed",
+    "sharedPatientsReferrals": [
+      {
+        "npi": "<string>",
+        "providerName": "<string>",
+        "specialtyLinkage": "<string>",
+        "totalAllowed": "<integer>",
+        "totalPatients": "<integer>",
+        "sharedPercentage": "<decimal p2>",
+        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes"
+      }
+    ],
+    "imagingAndTestReferrals": "// ORD BY DESC totalAllowed",
+    "imagingAndTestReferrals": [
+      {
+        "npi": "<string>",
+        "providerName": "<string>",
+        "specialtyLinkage": "<string>",
+        "totalAllowed": "<integer>",
+        "totalPatients": "<integer>",
+        "referralPercentage": "<decimal p4>",
+        "inNetwork": "<bool> // Calculated by the BE given a list of members that the BE deletes",
+        "type": "<string> // 'imaging' or 'test'"
+      }
+    ]
   }
 }
