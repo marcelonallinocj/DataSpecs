@@ -24,7 +24,7 @@
         }
       ],
       "panelSize": "<integer>",
-      "averageHCCScore": "<decimal p2>"
+      "patientRiskScore": "<decimal p2>"
     },
     "about": {
       "education": {
@@ -186,7 +186,7 @@
         }
       ],
       "panelSize": "<integer>",
-      "averageHCCScore": "<decimal p2>"
+      "patientRiskScore": "<decimal p2>"
     },
     "about": {
       "education": {
