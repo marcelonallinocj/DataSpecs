@@ -76,6 +76,10 @@
     },
     "qualityAnalytics": {
       "outcomesScore": "<integer>",
+      "fluCompliance": "<decimal p2>",
+      "fluEligibility": "<decimal p2>",
+      "awvCompliance": "<decimal p2>",
+      "awvEligibility": "<decimal p2>",
       "measures": "// We store top 10",
       "measures": [
         {
@@ -189,7 +193,12 @@
       },
       "yearsOfExperience": "<integer>"
     },
-
+    "qualityAnalytics": {
+      "fluCompliance": "<decimal p2>",
+      "fluEligibility": "<decimal p2>",
+      "awvCompliance": "<decimal p2>",
+      "awvEligibility": "<decimal p2>"
+    },
     "attribution": {
       "commercialLives": "<integer>",
       "medicareBreakdown": {
