@@ -1,0 +1,317 @@
+{
+  "internalVersion": "Q4-2021(Dec 14th Rel)",
+  "mappings": {
+    "properties": {
+      "SPECIALTY": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "CJ_SPECIALTY": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "EPISODES": {
+        "type": "object",
+        "properties": {
+          "episodeType": {
+            "type": "text",
+            "index_prefixes": {},
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "type": {
+            "type": "text",
+            "index_prefixes": {},
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "numEpisodes": {
+            "type": "integer",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          },
+          "cost": {
+            "type": "integer",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          },
+          "benchmarkDiff": {
+            "type": "integer",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          },
+          "benchmarkDiffPercent": {
+            "type": "integer",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          },
+          "cbsaBenchmark": {
+            "type": "integer",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      },
+      "CBSA": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ADDRESS_COUNTY": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ADDRESS_CITY": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ADDRESS_STATE": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ADDRESS_ZIP_CODE": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "ADDRESS_FULL": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "PRACTICE_GROUP": {
+        "type": "text",
+        "index_prefixes": {},
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "FIRST_NAME": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "LAST_NAME": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "FULL_NAME": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "NPI": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "YEAR_OF_SERVICE": {
+        "type": "integer",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "PROVIDER_TYPE": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "PATIENT_PANEL": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "PPI_COST_SCORE": {
+        "type": "integer",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "PPI_OUTCOME_SCORE": {
+        "type": "integer",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "RISK_SCORE": {
+        "type": "double"
+      },
+      "NUMBER_OF_EPISODES": {
+        "type": "double"
+      },
+      "NPI_COST_PER_PATIENT_PER_YEAR": {
+        "type": "double"
+      },
+      "CBSA_COST_PER_PATIENT_PER_YEAR": {
+        "type": "double"
+      },
+      "PATIENT_VOLUME": {
+        "type": "double"
+      },
+      "AVERAGE_COST_PER_EPISODE": {
+        "type": "double"
+      },
+      "DOC_ID": {
+        "type": "text"
+      },
+      "MEMBERS": {
+        "type": "object",
+        "properties": {
+          "memberID": {
+            "type": "text",
+            "index_prefixes": {},
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "DC_LIVES": {
+        "type": "double"
+      },
+      "MSSP_LIVES": {
+        "type": "double"
+      },
+      "CMRCL_LIVES": {
+        "type": "double"
+      },
+      "MFFS_LIVES": {
+        "type": "double"
+      },
+      "PANEL_SIZE": {
+        "type": "double"
+      },
+      "QUALITY_MEASURES": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "text",
+            "index_prefixes": {},
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "description": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          },
+          "performance": {
+            "type": "double",
+            "fields": {
+              "keyword": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
